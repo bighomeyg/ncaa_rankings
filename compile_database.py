@@ -26,7 +26,7 @@ for year in years:
 			for n in range(0, week+1):
 				curr_file=''.join(year + "/week_" + str(n) + "_" + year + ".csv")
 				template_file=open(''.join(year + "/week_" + str(n) + "_" + year + ".csv"), "a")
-				template_file.write(''.join(line.strip() + ",,,,,,,\n"))
+				template_file.write(''.join(line.strip() + ",\n"))
 
 #Pop in header
 for curr_file in glob.glob("*/week*.csv"):
