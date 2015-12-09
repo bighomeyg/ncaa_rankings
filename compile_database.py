@@ -3,6 +3,7 @@ import glob
 import commands
 
 years=["2000", "2001", "2002", "2003", "2004", "2005", "2006", "2007", "2008", "2009", "2010", "2011", "2012", "2013", "2014"]
+years=["2000"]
 
 def get_week(filename):
 	month = int(filename.split("-")[1])
@@ -30,4 +31,8 @@ for year in years:
 
 #Pop in header
 for curr_file in glob.glob("*/week*.csv"):
-	commands.getoutput("echo 'Team,Conference,TotalYards,Passing,Rushing,FirstDowns,Penalties,Turnovers' | cat - " + curr_file + " | sponge " + curr_file)
+	commands.getoutput("echo 'Team,Conference,TotalYards,Passing,Rushing,FirstDowns,Penalties,Turnovers,' | cat - " + curr_file + " | sponge " + curr_file)
+
+"""
+Texas A&amp;M,big-12
+"""
